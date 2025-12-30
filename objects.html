@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product = {
+            name:'socks',
+            price: 1000
+        }
+        console.log(product);
+        console.log(product.name);
+        product.name='pants'
+        console.log(product.name);
+        product.newProperty=true
+        console.log(product);
+        delete product.newProperty
+        console.log(product);
+
+        const{name} = product
+        console.log('Aca ' +name);
+        
+    //pasar de js object a json
+    const jsonString = JSON.stringify(product)
+    console.log(jsonString);
+    
+    //pasar de json a js object 
+    
+    console.log(JSON.parse(jsonString));
+    
+    </script>
+</body>
+</html>
