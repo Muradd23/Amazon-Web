@@ -40,7 +40,7 @@ products.forEach((product)=>{
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="" alt="${product.rating.stars}">
+              src="images/ratings/rating-${product.rating.stars}.png">
             <div class="product-rating-count link-primary">
               ${product.rating.count}
             </div>
@@ -76,7 +76,5 @@ products.forEach((product)=>{
             Add to Cart
           </button>
         </div>
-
-    
     `
 })
