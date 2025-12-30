@@ -28,7 +28,7 @@ const products = [{
 let productHTML =''
 
 products.forEach((product)=>{
-    productHTML += 
+    productHTML+= 
     `
     <div class="product-container">
           <div class="product-image-container">
@@ -49,7 +49,7 @@ products.forEach((product)=>{
           </div>
 
           <div class="product-price">
-            ${product.priceCents/100}
+            $${(product.priceCents/100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
@@ -80,3 +80,5 @@ products.forEach((product)=>{
         </div>
     `
 })
+
+document.querySelector('.js-products-grid').innerHTML=productHTML
