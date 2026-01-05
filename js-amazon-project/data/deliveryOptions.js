@@ -14,3 +14,13 @@ export const deliveryOptions = [
     deliveryDays:1,
     priceCents:999
 }]
+
+export function getDeliveryOptions(deliveryOptionId){
+    let matchingDelivery
+    deliveryOptions.forEach((deliveryOption)=>{
+        if(deliveryOption.id===deliveryOptionId){
+            matchingDelivery = deliveryOption
+        }
+    })
+    return matchingDelivery || deliveryOptions[0]
+}
