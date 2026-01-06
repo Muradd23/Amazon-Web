@@ -1,7 +1,6 @@
 import { cart,addToCart } from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
-console.log('hello');
 // const products = [{
 //     image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
 //     name:'Black and Gray Athletic Cotton Socks - 6 Pairs',
@@ -35,7 +34,7 @@ let productHTML =''
 products.forEach((product)=>{
     productHTML+= 
     `
-    <div class="product-container">
+    <div class="product-container js-product-container-${product.id}">
           <div class="product-image-container">
             <img class="product-image"
               src="${product.image}">
@@ -58,8 +57,8 @@ products.forEach((product)=>{
           </div>
 
           <div class="product-quantity-container">
-            <select>
-              <option selected value="1">1</option>
+            <select class="js-quantity-selector-${product.id}">
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -104,11 +103,23 @@ function updateCartQuantity(){
 }
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   button.addEventListener('click',()=>{
-    console.log('added');
     const productId = button.dataset.productId
+    console.log('added');
 
-    addToCart(productId) 
+    const quantitySelector = document.querySelector(
+        `.js-quantity-selector-${productId}`
+      );
+    const quantity = Number(quantitySelector.value)  
+    console.log(quantity);
+    
+ 
+    addToCart(productId,quantity) 
     updateCartQuantity()
-   
+    const container = document.querySelector(`.js-product-container-${productId}`)
+    container.classList.add('js-added-to-cart')
+    setTimeout(()=>{
+      container.classList.remove('js-added-to-cart')
+    },3000)
   })
 })
+console.log(cart);

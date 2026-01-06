@@ -12,19 +12,11 @@ export function renderPaymentSummary(){
           const deliveryOption = getDeliveryOptions(cartItem.deliveryOptionId)
           shippingPriceCents += deliveryOption.priceCents
           totalQuantity += cartItem.quantity
-       })
-       console.log(productPriceCents);
-       console.log(shippingPriceCents);
-
-       
+       })  
       const totalBeforeTax = productPriceCents + shippingPriceCents
       const tax = totalBeforeTax * 0.1
-      console.log(tax);
       const totalCents = totalBeforeTax + tax
-      console.log(totalCents);
-      console.log(totalQuantity);
       
-
       const paymentSummaryHTML =`
        <div class="payment-summary-title">
             Order Summary
@@ -59,5 +51,11 @@ export function renderPaymentSummary(){
             Place your order
           </button>
       `
+
+      const checkoutHeaderHTML = `
+         Checkout (<a class="return-to-home-link"
+            href="amazon.html">${totalQuantity} items</a>)
+      `
    document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML
+   document.querySelector('.js-checkout-header-middle-section').innerHTML=checkoutHeaderHTML
 } 
