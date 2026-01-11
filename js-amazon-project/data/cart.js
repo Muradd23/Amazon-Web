@@ -42,7 +42,7 @@ export  function addToCart(productId,quantity=1){
     }
     
     saveToStorage()
-    console.log(cart);
+    
     
 }
 export function updateQuantity(productId,newQuantity){
