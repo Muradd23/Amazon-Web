@@ -77,9 +77,13 @@ export function loadProductsFetch(){
       console.log('load products');
     
     
+ }).catch(()=>{
+    console.log('Unexepected Error');
+    
   })
   return promise
 }
+loadProductsFetch()
 // loadProductsFetch().then(()=>{
 //   console.log();
   
@@ -96,11 +100,16 @@ export function loadProductsFetch(){
 //       console.log('load products');
 //       fun()
 //   })
+
+//   xhr.addEventListener('error',(error)=>{
+    
+//   })
+
 //   xhr.open('GET','https://supersimplebackend.dev/products')
 //   xhr.send()
 // }
 
-
+// loadProducts()
 
 
 // export const products = [
