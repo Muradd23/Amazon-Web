@@ -1,11 +1,11 @@
 import {loadFromStorage} from '../../data/cart.js'
 import {renderOrderSummary} from '../../scripts/checkout/orderSummary.js'
-import { loadProducts } from '../../data/products.js'
+import { loadProducts,loadProductsFetch } from '../../data/products.js'
 
 
 describe('test suite: renderOrderSummary',()=>{
     beforeAll((done)=>{
-        loadProducts(()=>{
+        loadProductsFetch().then(()=>{
             done()
         })
     })
