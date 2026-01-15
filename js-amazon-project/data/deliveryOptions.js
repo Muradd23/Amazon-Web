@@ -22,5 +22,5 @@ export function getDeliveryOptions(deliveryOptionId){
             matchingDelivery = deliveryOption
         }
     })
-    return matchingDelivery || deliveryOptions[0]
+    return matchingDelivery 
 }

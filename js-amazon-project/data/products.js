@@ -15,6 +15,7 @@ class Product{
   name
   rating
   priceCents
+  keywords
   // constructor(id,image,name,rating,priceCents){
   //   this.id=id
   //   this.image=image
@@ -28,7 +29,7 @@ class Product{
     this.name=productDetails.name
     this.rating=productDetails.rating
     this.priceCents=productDetails.priceCents
-
+    this.keywords = productDetails.keywords
   }
 
   getStarsUrl(){
@@ -75,41 +76,41 @@ export function loadProductsFetch(){
       return new Product(productDetails)
       })
       console.log('load products');
+  
     
-    
- }).catch(()=>{
-    console.log('Unexepected Error');
+ }).catch((error)=>{
+    console.log(error);
     
   })
   return promise
 }
-loadProductsFetch()
+
 // loadProductsFetch().then(()=>{
 //   console.log();
   
 // })
 
-// export function loadProducts(fun){
-//   const xhr  = new XMLHttpRequest()
+export function loadProducts(fun){
+  const xhr  = new XMLHttpRequest()
 
-//   xhr.addEventListener('load',()=>{
-//     products = JSON.parse(xhr.response).map((productDetails)=>{
-//       if(productDetails.type==='clothing') return new Clothing(productDetails)
-//       return new Product(productDetails)
-//       })
-//       console.log('load products');
-//       fun()
-//   })
+  xhr.addEventListener('load',()=>{
+    products = JSON.parse(xhr.response).map((productDetails)=>{
+      if(productDetails.type==='clothing') return new Clothing(productDetails)
+      return new Product(productDetails)
+      })
+      console.log('load products');
+      fun()
+  })
 
-//   xhr.addEventListener('error',(error)=>{
+  xhr.addEventListener('error',(error)=>{
     
-//   })
+  })
 
-//   xhr.open('GET','https://supersimplebackend.dev/products')
-//   xhr.send()
-// }
+  xhr.open('GET','https://supersimplebackend.dev/products')
+  xhr.send()
+}
 
-// loadProducts()
+
 
 
 // export const products = [

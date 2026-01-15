@@ -7,27 +7,17 @@ import { loadCart } from "../data/cart.js";
 
 async function loadPage(){
 
-    try{
-        //throw 'error'
-        await loadProductsFetch()
-
-        await new Promise((resolve,reject)=>{
-            loadCart(()=>{
-                //reject('error')
-                resolve()
-            })
-        })
-
-    } catch(error){
-        console.log('Unexepected Error');
-    }
-
-
+   try {
+        await Promise.all([
+            loadProductsFetch(),
+            loadCart(),
+        ])
+   } catch (error) {
     
-    renderOrderSummary()
-    renderPaymentSummary()
-}
-loadPage()
+   }
+   renderOrderSummary()
+   renderPaymentSummary()
+}loadPage()
 // Promise.all([
 //  loadProductsFetch()  
 // ,new Promise((resolve)=>{

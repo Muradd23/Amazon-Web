@@ -1,6 +1,6 @@
 import { cart,addToCart } from '../data/cart.js';
 import { products,loadProducts } from '../data/products.js';
-import { formatCurrency } from './utils/money.js';
+
 // const products = [{
 //     image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
 //     name:'Black and Gray Athletic Cotton Socks - 6 Pairs',
@@ -30,11 +30,28 @@ import { formatCurrency } from './utils/money.js';
 loadProducts(renderProductsGrid)
 
 
-function renderProductsGrid(){
+export function renderProductsGrid(productsToRender = products){
 
   let productHTML =''
+  const url = new URL(window.location.href)
+  const search = url.searchParams.get('search')
+  let filteredProducts = productsToRender
 
-  products.forEach((product)=>{
+  if(search){
+    filteredProducts = products.filter((product)=>{
+      //return product.name.includes(search)
+      let matchingKeywords = false
+
+      product.keywords.forEach(keyword =>{
+        if(keyword.toLowerCase().includes(search.toLowerCase())){
+          matchingKeywords = true
+        }
+      })
+      return matchingKeywords || product.name.toLowerCase().includes(search.toLocaleLowerCase())
+    })
+  }
+
+  filteredProducts.forEach((product)=>{
       productHTML+= 
       `
       <div class="product-container js-product-container-${product.id}">
@@ -101,8 +118,8 @@ function renderProductsGrid(){
       })
       document.querySelector('.js-cart-quantity').innerHTML=cartQuantity
       
-
   }
+  
   document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
     button.addEventListener('click',()=>{
       const productId = button.dataset.productId
@@ -125,3 +142,7 @@ function renderProductsGrid(){
     })
   })
 }
+document.querySelector('.js-search-button').addEventListener('click',()=>{
+      const search = document.querySelector('.js-search-bar').value
+      window.location.href = `amazon.html?search=${encodeURIComponent(search)}`
+    })

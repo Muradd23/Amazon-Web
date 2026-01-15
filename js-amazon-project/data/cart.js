@@ -20,7 +20,7 @@ export function loadFromStorage(){
     }
 }
 
-export  function addToCart(productId,quantity=1){
+export  function addToCart(productId,quantity){
    let matchingItem
    
     cart.forEach((cartItem)=>{
@@ -28,8 +28,6 @@ export  function addToCart(productId,quantity=1){
             matchingItem = cartItem
         }
     })
-
-     
 
     if(matchingItem){
         matchingItem.quantity += Number(quantity)
@@ -40,11 +38,12 @@ export  function addToCart(productId,quantity=1){
             deliveryOptionId:'1'
         })
     }
+    console.log('added');
     
     saveToStorage()
     
-    
 }
+
 export function updateQuantity(productId,newQuantity){
      let matchingItem
    
@@ -86,16 +85,25 @@ export function updateDeliveryOption(productId,deliveryOptionId){
     saveToStorage()
  }
 
+ export function vaciarCart(){
+    cart = []
+    saveToStorage()
+ }
 
- export function loadCart(fun){
+ export function loadCart(){
    const xhr  = new XMLHttpRequest()
  
    xhr.addEventListener('load',()=>{
         console.log(xhr.response);
-        
-      
-       fun()
    })
    xhr.open('GET','https://supersimplebackend.dev/cart')
    xhr.send()
+ }
+
+ export async function loadCartFetch(){
+    const response = await fetch('https://supersimplebackend.dev/cart')
+    const text = await response.text()
+    console.log(text);
+    return text
+    
  }
