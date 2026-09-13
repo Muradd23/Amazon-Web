@@ -1,3 +1,9 @@
+/*
+  cartTest.js
+  Prueba la lógica de agregar productos al carrito.
+  Comprueba que se aumente la cantidad si el producto ya existe y que se cree uno nuevo si no existe.
+*/
+
 import {addToCart, cart,loadFromStorage} from '../../data/cart.js'
 describe('test suite: addToCart', ()=>{
     it('adds an existing product to the cart ', ()=>{

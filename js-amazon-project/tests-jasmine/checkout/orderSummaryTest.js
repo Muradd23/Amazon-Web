@@ -1,3 +1,9 @@
+/*
+  orderSummaryTest.js
+  Prueba la renderización del resumen del carrito en el checkout.
+  Verifica que los productos aparezcan y que el borrado funcione correctamente.
+*/
+
 import {loadFromStorage} from '../../data/cart.js'
 import {renderOrderSummary} from '../../scripts/checkout/orderSummary.js'
 import { loadProducts,loadProductsFetch } from '../../data/products.js'

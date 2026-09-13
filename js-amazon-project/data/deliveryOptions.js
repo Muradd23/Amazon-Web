@@ -1,3 +1,11 @@
+/*
+  deliveryOptions.js
+  Contiene las opciones de entrega disponibles para cada producto.
+  - define días estimados de entrega
+  - define costos de envío por opción
+  - devuelve la opción seleccionada según su id
+*/
+
 export const deliveryOptions = [
 {
     id:'1',

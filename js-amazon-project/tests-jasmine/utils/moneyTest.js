@@ -1,3 +1,9 @@
+/*
+  moneyTest.js
+  Verifica el formato de monedas en la utilidad auxiliar.
+  Asegura que los valores en centavos se muestren con dos decimales.
+*/
+
 import { formatCurrency } from "../../scripts/utils/money.js";
 describe('test suite: format currency', ()=>{
     it('converts cents into dollars',()=>{

@@ -1,3 +1,11 @@
+/*
+  orderSummary.js
+  Renderiza el resumen de productos en la página de checkout.
+  - muestra cada artículo del carrito
+  - calcula la fecha estimada de entrega
+  - permite actualizar cantidad, borrar items y seleccionar opción de envío
+*/
+
 import { cart,removeFromCart,updateDeliveryOption } from "/data/cart.js";
 import { products,getProduct } from "/data/products.js";
 import { formatCurrency } from "/scripts/utils/money.js"

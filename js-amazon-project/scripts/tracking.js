@@ -1,3 +1,11 @@
+/*
+  tracking.js
+  Muestra el estado de entrega de un pedido específico.
+  - lee orderId y productId desde la URL
+  - calcula el avance del paquete
+  - renderiza la barra de progreso y la fecha estimada de entrega
+*/
+
 import { loadCartFetch } from "../data/cart.js";
 import { getOrder} from "../data/orders.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";

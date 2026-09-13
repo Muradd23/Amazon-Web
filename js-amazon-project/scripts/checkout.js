@@ -1,3 +1,9 @@
+/*
+  checkout.js
+  Inicializa la página de checkout.
+  Carga los productos y el carrito antes de renderizar los paneles de resumen y pago.
+*/
+
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 import { loadProductsFetch } from "../data/products.js";

@@ -1,3 +1,11 @@
+/*
+  amazon.js
+  Controla la página principal de Amazon.
+  - carga los productos en la grilla
+  - filtra por búsqueda
+  - agrega productos al carrito desde cada tarjeta
+*/
+
 import { cart,addToCart } from '../data/cart.js';
 import { products,loadProducts } from '../data/products.js';
 

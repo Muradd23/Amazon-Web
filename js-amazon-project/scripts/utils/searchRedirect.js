@@ -1,3 +1,11 @@
+/*
+  searchRedirect.js
+  Configura la búsqueda desde el header.
+  - detecta el input y el botón de búsqueda
+  - redirige a amazon.html con el texto buscado
+  - permite buscar también al presionar Enter
+*/
+
 export function setupSearchRedirect(){
     const searchInput = document.querySelector('.js-search-bar')
     const searchButton = document.querySelector('.js-search-button')

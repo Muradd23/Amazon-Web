@@ -1,3 +1,9 @@
+/*
+  cart-class.js
+  Versión orientada a objetos del carrito.
+  Se usa como ejemplo de clase con almacenamiento privado en localStorage.
+  Cada instancia maneja su propio conjunto de artículos.
+*/
 
 class Cart{
     cartItems //public property 

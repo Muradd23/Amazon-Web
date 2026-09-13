@@ -1,3 +1,11 @@
+/*
+  paymentSummary.js
+  Calcula y renderiza el resumen financiero del pedido.
+  - suma precios de productos y envío
+  - calcula impuesto y total final
+  - genera la acción de "Place your order" para enviar la compra
+*/
+
 import{cart} from '../../data/cart.js'
 import{getProduct} from '../../data/products.js'
 import { getDeliveryOptions } from '../../data/deliveryOptions.js'

@@ -1,3 +1,11 @@
+/*
+  orders.js
+  Genera la página de historial de pedidos.
+  - muestra todos los pedidos realizados
+  - calcula fechas y totales
+  - permite volver a comprar y redirigir a tracking o búsqueda
+*/
+
 import { orders } from "../data/orders.js";
 import { addToCart,cart, vaciarCart} from "../data/cart.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js"

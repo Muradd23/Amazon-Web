@@ -1,3 +1,11 @@
+/*
+  products.js
+  Define los productos disponibles en la tienda y sus datos.
+  - busca un producto por su id
+  - crea objetos Product y Clothing
+  - carga la lista desde la API del backend
+*/
+
 import { formatCurrency } from "../scripts/utils/money.js"
 export function getProduct(productId){
    let matchingProduct  

@@ -1,3 +1,8 @@
+/*
+  cart-oop.js
+  Variante del carrito basada en objetos literales.
+  Se usa para practicar encapsulación y la carga de datos desde localStorage.
+*/
 
 function Cart(localStorageKey){
     const cart = {

@@ -1,3 +1,11 @@
+/*
+  cart.js
+  Este archivo controla el carrito de compras del usuario.
+  - carga los productos guardados en localStorage
+  - agrega, actualiza y elimina artículos
+  - guarda los cambios para que persistan en la sesión
+*/
+
 export let cart
 
 loadFromStorage()
