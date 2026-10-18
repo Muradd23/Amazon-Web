@@ -63,7 +63,7 @@ export function renderPaymentSummary(){
 
       const checkoutHeaderHTML = `
          Checkout (<a class="return-to-home-link"
-            href="amazon.html">${totalQuantity} items</a>)
+            href="index.html">${totalQuantity} items</a>)
       `
   const paymentSummaryEl = document.querySelector('.js-payment-summary')
   if(paymentSummaryEl) paymentSummaryEl.innerHTML = paymentSummaryHTML

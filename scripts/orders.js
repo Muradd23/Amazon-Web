@@ -97,7 +97,7 @@ async function renderOrderPage(){
         if(text !== ''){
             const encondedText = encodeURIComponent(text)
             console.log(encondedText);
-            window.location.href=`amazon.html?search=${encondedText}`
+            window.location.href=`index.html?search=${encondedText}`
         }
      })
     document.querySelectorAll('.js-buy-again-button').forEach((button)=>{
